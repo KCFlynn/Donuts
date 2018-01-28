@@ -4,24 +4,31 @@
 <meta charset="UTF-8">
 <title>HTML 5 Web Storage</title>
 
-<link href="reset.css" type="text/css" rel="stylesheet" />
+<link href="KCFreset.css" type="text/css" rel="stylesheet" />
 
-<link href="webStorage_Style.css" type="text/css" rel="stylesheet" />
+<link href="KCFwebStorage_Style.css" type="text/css" rel="stylesheet" />
 
 <script>
 window.addEventListener("load",init);
+    
+function clearFields(){
+    document.getElementById("flavour").value="";
+    document.getElementById("size").value="";
+    document.getElementById("hotCold").value="";
+    document.getElementById("comments").value="";
+}    
 
 function init(){
 	if(typeof(Storage)!=="undefined"){
 	
 	display();
-	
+
 	var button=document.getElementById("button");
 	button.addEventListener("click",saveInfo);
 	}
-	
+
 	else{
-	//old bowser	
+	//old bowser
 	}
 }
 
@@ -30,15 +37,15 @@ function saveInfo(){
     var size=document.getElementById("size").value;
     var hotCold=document.getElementById("hotCold").value;
 	var comments=document.getElementById("comments").value;
-	
+
 	localStorage.setItem("flavourName",flavour);
     localStorage.setItem("sizeName",size);
     localStorage.setItem("hotColdName",hotCold);
 	localStorage.setItem("userComments",comments);
-	
-	
+
+
 	display();
-	
+
 }
 
 function display(){
@@ -47,13 +54,13 @@ function display(){
     var theSize=localStorage.getItem("sizeName");
     var theHotCold=localStorage.getItem("hotColdName");
 	var theComments=localStorage.getItem("userComments");
-	
+
 	if(theComments==undefined){
 		document.getElementById("useroutput").innerHTML="";
 	}
-	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />The Flavour: "+theFlavour+"<br /><br />The Size: "+theSize+"<br /><br />The Hot/Cold: "+theHotCold+"<br /><br />  The Speciel Requests: "+theComments+"";
+	else{ document.getElementById("useroutput").innerHTML="Your Order  <hr /><br /><br />Your Flavour: <br/>"+theFlavour+"<br /><br />Donut Size: "+theSize+"<br /><br />Temprature: "+theHotCold+"<br /><br />  Speciel Requests: "+theComments+"";
 	}
-	
+
 }
 
 </script>
@@ -66,11 +73,11 @@ function display(){
 <div id="screen">
 <div id="main">
 	<section id="userinput">
-    DohNuttttts! <br>
+   Whiskey & Donuts!  <br>
 	<hr />
     <br />
     <form>
-    
+
     <div>Flavour: <br /><input type="input" id="flavour" size="20" placeholder="Chartreuse"></div>
     <br />
     <div>Size: <br /><input type="input" id="size" size="20" placeholder="24 Inch"></div>
@@ -79,17 +86,18 @@ function display(){
     <br />
     <div>Speciel Requests:<br /> <textarea id="comments" rows="5" cols="35" placeholder="Twinkle twinkle little star glaze my donut with caviar."></textarea></div>
     <br />
-     <div><input type="button" id="button" value="Save"></div>
-    
+    <div><input type="button" id="button" value="Save">
+    <input type="button" onclick="clearFields()" id="clearButton" value="Clear"></div>
+
     </form>
     </section>
-    
-    
+
+
     <section id="useroutput">
- Your Order! 
+    Your Order 
  	<hr />
-    <br /><br />
-        
+    <br />
+
     </section>
 
 </div>
