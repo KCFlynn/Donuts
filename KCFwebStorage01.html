@@ -1,0 +1,100 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HTML 5 Web Storage</title>
+
+<link href="reset.css" type="text/css" rel="stylesheet" />
+
+<link href="webStorage_Style.css" type="text/css" rel="stylesheet" />
+
+<script>
+window.addEventListener("load",init);
+
+function init(){
+	if(typeof(Storage)!=="undefined"){
+	
+	display();
+	
+	var button=document.getElementById("button");
+	button.addEventListener("click",saveInfo);
+	}
+	
+	else{
+	//old bowser	
+	}
+}
+
+function saveInfo(){
+	var flavour=document.getElementById("flavour").value;
+    var size=document.getElementById("size").value;
+    var hotCold=document.getElementById("hotCold").value;
+	var comments=document.getElementById("comments").value;
+	
+	localStorage.setItem("flavourName",flavour);
+    localStorage.setItem("sizeName",size);
+    localStorage.setItem("hotColdName",hotCold);
+	localStorage.setItem("userComments",comments);
+	
+	
+	display();
+	
+}
+
+function display(){
+	var rightBox=document.getElementById("useroutput");
+	var theFlavour=localStorage.getItem("flavourName");
+    var theSize=localStorage.getItem("sizeName");
+    var theHotCold=localStorage.getItem("hotColdName");
+	var theComments=localStorage.getItem("userComments");
+	
+	if(theComments==undefined){
+		document.getElementById("useroutput").innerHTML="";
+	}
+	else{ document.getElementById("useroutput").innerHTML="OUTPUT  <hr /><br /><br />The Flavour: "+theFlavour+"<br /><br />The Size: "+theSize+"<br /><br />The Hot/Cold: "+theHotCold+"<br /><br />  The Speciel Requests: "+theComments+"";
+	}
+	
+}
+
+</script>
+
+
+
+</head>
+
+<body>
+<div id="screen">
+<div id="main">
+	<section id="userinput">
+    DohNuttttts! <br>
+	<hr />
+    <br />
+    <form>
+    
+    <div>Flavour: <br /><input type="input" id="flavour" size="20" placeholder="Chartreuse"></div>
+    <br />
+    <div>Size: <br /><input type="input" id="size" size="20" placeholder="24 Inch"></div>
+    <br />
+    <div>Hot or Cold: <br /><input type="input" id="hotCold" size="20" placeholder="Warmish"></div>
+    <br />
+    <div>Speciel Requests:<br /> <textarea id="comments" rows="5" cols="35" placeholder="Twinkle twinkle little star glaze my donut with caviar."></textarea></div>
+    <br />
+     <div><input type="button" id="button" value="Save"></div>
+    
+    </form>
+    </section>
+    
+    
+    <section id="useroutput">
+ Your Order! 
+ 	<hr />
+    <br /><br />
+        
+    </section>
+
+</div>
+</div>
+
+
+</body>
+</html>

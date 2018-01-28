@@ -1,0 +1,47 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#main{
+width:750px; height:750px;
+margin:0 auto;	
+font-family: Verdana;
+    font-size: 26px;
+}
+#userinput{
+    border-radius: 8px;
+	float:left;
+	margin-top:80px;
+	padding:20px;
+	background-color:rgba(251,147,233,0.67);
+	width:300px; height:500px;
+    font
+	}
+
+
+#useroutput{
+    border-radius: 8px;
+	float:left;
+	margin-top:80px;
+	margin-left:60px;
+	padding:20px;
+	width:300px; height:500px;
+	background-color:rgba(251,147,233,0.67);
+	
+	}
+#screen{
+    background-image: url(backgroundDonutPNG.PNG);
+    background-repeat: no-repeat;
+}
+#comments{
+    margin-top: 8px;
+    -webkit-border-radius:8px;  
+}
+#flavour{
+    -webkit-border-radius:5px; 
+}
+#size{
+    -webkit-border-radius:5px; 
+}
+#hotCold{
+    -webkit-border-radius:5px; 
+}s
