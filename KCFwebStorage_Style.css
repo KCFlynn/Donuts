@@ -45,25 +45,14 @@ font-family: Verdana;
 #hotCold{
     -webkit-border-radius:5px; 
 }
-#button{
+.button{
    -webkit-border-radius:5px; 
     width:100px;
     height:25px;
     -webkit-transition-duration:0.4s;
     transition-duration: 0.4s;   
 }
-#button:hover{
-    background-color: rgb(255,63,238);
-    color: white;
-}
-#clearButton{
-    -webkit-border-radius:5px; 
-    width:100px;
-    height:25px;
-    -webkit-transition-duration:0.4s;
-    transition-duration: 0.4s;     
-}
-#clearButton:hover{
+.button:hover{
     background-color: rgb(255,63,238);
     color: white;
 }
