@@ -9,14 +9,7 @@
 <link href="KCFwebStorage_Style.css" type="text/css" rel="stylesheet" />
 
 <script>
-window.addEventListener("load",init);
-    
-function clearFields(){
-    document.getElementById("flavour").value="";
-    document.getElementById("size").value="";
-    document.getElementById("hotCold").value="";
-    document.getElementById("comments").value="";
-}    
+window.addEventListener("load",init);   
 
 function init(){
 	if(typeof(Storage)!=="undefined"){
@@ -58,10 +51,16 @@ function display(){
 	if(theComments==undefined){
 		document.getElementById("useroutput").innerHTML="";
 	}
-	else{ document.getElementById("useroutput").innerHTML="Your Order  <hr /><br /><br />Your Flavour: <br/>"+theFlavour+"<br /><br />Donut Size: "+theSize+"<br /><br />Temprature: "+theHotCold+"<br /><br />  Speciel Requests: "+theComments+"";
+	else{ document.getElementById("useroutput").innerHTML="Your Order Arrg... <hr /><br /><br />Your Flavour: <br/>"+theFlavour+"<br /><br />Donut Size: "+theSize+"<br /><br />Temprature: "+theHotCold+"<br /><br/>Speciel Requests: "+theComments+"";
 	}
 
 }
+    function clearFields(){
+    document.getElementById("flavour").value="";
+    document.getElementById("size").value="";
+    document.getElementById("hotCold").value="";
+    document.getElementById("comments").value="";
+} 
 
 </script>
 
@@ -78,13 +77,13 @@ function display(){
     <br />
     <form>
 
-    <div>Flavour: <br /><input type="input" id="flavour" size="20" placeholder="Chartreuse"></div>
+    <div>Flavour: <br /><input type="input" id="flavour" size="20" placeholder="Lagavulin"></div>
     <br />
-    <div>Size: <br /><input type="input" id="size" size="20" placeholder="24 Inch"></div>
+    <div>Size: <br /><input type="input" id="size" size="20" placeholder="Foot Long"></div>
     <br />
-    <div>Hot or Cold: <br /><input type="input" id="hotCold" size="20" placeholder="Warmish"></div>
+    <div>Hot or Cold: <br /><input type="input" id="hotCold" size="20" placeholder="Flaming"></div>
     <br />
-    <div>Speciel Requests:<br /> <textarea id="comments" rows="5" cols="35" placeholder="Twinkle twinkle little star glaze my donut with caviar."></textarea></div>
+    <div>Speciel Requests:<br /> <textarea id="comments" rows="5" cols="35" placeholder="Twinkle Twinkle Little Star Glaze My Donut With Caviar."></textarea></div>
     <br />
     <div><input type="button" class="button" value="Save">
     <input type="button" onclick="clearFields()" class="button" value="Clear"></div>
@@ -94,7 +93,7 @@ function display(){
 
 
     <section id="useroutput">
-    Your Order 
+    Your Order Arrg... 
  	<hr />
     <br />
 
