@@ -10,50 +10,39 @@
 
 <script>
 window.addEventListener("load",init);   
-
 function init(){
 	if(typeof(Storage)!=="undefined"){
 	
 	display();
-
 	var button=document.getElementById("button");
 	button.addEventListener("click",saveInfo);
 	}
-
 	else{
 	//old bowser
 	}
 }
-
 function saveInfo(){
 	var flavour=document.getElementById("flavour").value;
     var size=document.getElementById("size").value;
     var hotCold=document.getElementById("hotCold").value;
 	var comments=document.getElementById("comments").value;
-
 	localStorage.setItem("flavourName",flavour);
     localStorage.setItem("sizeName",size);
     localStorage.setItem("hotColdName",hotCold);
 	localStorage.setItem("userComments",comments);
-
-
 	display();
-
 }
-
 function display(){
 	var rightBox=document.getElementById("useroutput");
 	var theFlavour=localStorage.getItem("flavourName");
     var theSize=localStorage.getItem("sizeName");
     var theHotCold=localStorage.getItem("hotColdName");
 	var theComments=localStorage.getItem("userComments");
-
 	if(theComments==undefined){
 		document.getElementById("useroutput").innerHTML="";
 	}
 	else{ document.getElementById("useroutput").innerHTML="Your Order Arrg... <hr /><br /><br />Your Flavour: <br/>"+theFlavour+"<br /><br />Donut Size: "+theSize+"<br /><br />Temprature: "+theHotCold+"<br /><br/>Speciel Requests: "+theComments+"";
 	}
-
 }
     function clearFields(){
     document.getElementById("flavour").value="";
@@ -61,7 +50,6 @@ function display(){
     document.getElementById("hotCold").value="";
     document.getElementById("comments").value="";
 } 
-
 </script>
 
 
@@ -85,7 +73,7 @@ function display(){
     <br />
     <div>Speciel Requests:<br /> <textarea id="comments" rows="5" cols="35" placeholder="Twinkle Twinkle Little Star Glaze My Donut With Caviar."></textarea></div>
     <br />
-    <div><input type="button" class="button" value="Save">
+    <div><input type="button" class="button" id="button" value="Save">
     <input type="button" onclick="clearFields()" class="button" value="Clear"></div>
 
     </form>
